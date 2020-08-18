@@ -18,7 +18,7 @@ class CreatePublicationsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name', 200);
             $table->string('slug', 200)->unique();
-            $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('DRAFT');
+            $table->enum('status', ['APROBADO', 'BORRADOR'])->default('BORRADOR');
             $table->timestamps();
             // Relacion
             $table->foreign('user_id')->references('id')->on('users')
